@@ -11,6 +11,7 @@ from django.contrib.auth.models import Group
 import json
 
 class MaestrosAll(generics.CreateAPIView):
+    #Obtener todos los maestros
     # Necesita permisos de autenticación de usuario para poder acceder a la petición
     permission_classes = (permissions.IsAuthenticated,)
     def get(self, request, *args, **kwargs):
@@ -60,5 +61,5 @@ class MaestrosView(generics.CreateAPIView):
                                             area_investigacion= request.data["area_investigacion"],
                                             materias_json = json.dumps(request.data["materias_json"]))
             maestro.save()
-            return Response({"maestro_created_id": maestro.id }, 201)
+            return Response({"Maestro creado con ID= ": maestro.id }, 201)
         return Response(user.errors, status=status.HTTP_400_BAD_REQUEST)

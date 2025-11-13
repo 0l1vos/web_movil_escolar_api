@@ -14,12 +14,17 @@ urlpatterns = [
         path('admin/', users.AdminView.as_view()),
     #Admin Data
         path('lista-admins/', users.AdminAll.as_view()),
-    #Edit Admin
+    #\Edit Admin
         #path('admins-edit/', users.AdminsViewEdit.as_view())
      #Create Alumno
         path('alumnos/', alumnos.AlumnosView.as_view()),
+     #Alumno Data
+        path('lista-alumnos/', alumnos.AlumnosAll.as_view()),    
+        
     #Create Maestro
         path('maestros/', maestros.MaestrosView.as_view()),
+    #Maestro Data
+        path('lista-maestros/', maestros.MaestrosAll.as_view()),
     #Login
         path('login/', auth.CustomAuthToken.as_view()),
     #Logout
